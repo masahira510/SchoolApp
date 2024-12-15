@@ -7,39 +7,39 @@ import java.util.ArrayList;
 public class SchoolService {
 
     // 学生リストフィールド定義
-    ArrayList<String> studentList = new ArrayList<>();
+    ArrayList<Student> students = new ArrayList<>();
 
     // 教師リストフィールド定義
-    ArrayList<String> teacherList = new ArrayList<>();
+    ArrayList<Teacher> teachers = new ArrayList<>();
     
     // 学生リスト追加メソッド
-    public void checkStudent(String name,int age,String sex) {
-        if(age >= 10) {
-            studentList.add(name + "," + age + "歳" + "," + sex + "," + "生徒"); //追加
+    public void checkStudent(Student student) {
+        if(student.getAge() >= 10) {
+            students.add(student);
         } else {
-            System.out.println(name + "さんは10歳以下です"); //コンソール出力
+            System.out.println(student.getName() + "さんは10歳以下です"); //コンソール出力
         }
     }
 
     // 教師リスト追加メソッド
-    public void checkTeacher(String name,int age,String sex) {
-        if(age >= 10) {
-            teacherList.add(name + "," + age + "歳" + "," + sex + "," + "教師"); //追加
+    public void checkTeacher(Teacher teacher) {
+        if(teacher.getAge() >= 10) {
+            teachers.add(teacher);
         } else {
-            System.out.println(name + "さんは10歳以下です"); //コンソール出力
+            System.out.println(teacher.getName() + "さんは10歳以下です"); //コンソール出力
         }
     }
 
     // 学生リスト内容をコンソール出力するメソッド
     public void outputStudent() {
-        for(String s : studentList) { //forでループ処理
-            System.out.println(s);
+        for(Student student : students) { //forでループ処理
+            System.out.println(student.getName() + "," + student.getAge() + "歳," + student.getSex() + "," + "生徒");
         }
     }   
 
     public void outputTeacher() {
-        for(String t : teacherList) { //forでループ処理
-            System.out.println(t);
+        for(Teacher teacher : teachers) { //forでループ処理
+            System.out.println(teacher.getName() + "," + teacher.getAge() + "歳," + teacher.getSex() + "," + "教師");
         }
     }
 

@@ -35,11 +35,11 @@ public class Main {
         
         // forでループ処理し、リスト追加メソッドに値を追加
         for(Student stu : studentList) {
-            Service.checkStudent(stu.getName(),stu.getAge(),stu.getSex()); 
+            Service.checkStudent(stu); 
         }
 
         for(Teacher tea : teacherList) {
-            Service.checkTeacher(tea.getName(),tea.getAge(),tea.getSex()); 
+            Service.checkTeacher(tea); 
         }
 
         // 学生リスト出力
